@@ -22,8 +22,8 @@ router.post('/add', function(req, res, next) {
   });
 });
 
-router.post('/get', function(req, res, next) {
-  const address = req.body.address;
+router.get('/get', function(req, res, next) {
+  const address = req.query.address;
 
   power.find({ 'address': address }, function(err, result) {
     assert.equal(err, null);
