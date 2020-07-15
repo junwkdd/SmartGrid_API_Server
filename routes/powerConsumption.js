@@ -25,6 +25,8 @@ router.post('/add', function(req, res, next) {
 router.get('/get', function(req, res, next) {
   const address = req.query.address;
 
+  console.log('address: ' + address);
+
   power.find({ 'address': address }, function(err, result) {
     assert.equal(err, null);
     console.log('사용자 소비전력 데이터 추출 완료');
